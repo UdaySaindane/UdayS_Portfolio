@@ -1,0 +1,412 @@
+.about-container {
+    padding: 20px 0;
+}
+
+.page-title {
+    font-family: 'Caveat', cursive;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.title-underline {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    transform: skew(-12deg);
+    opacity: 0.3;
+}
+
+.about-content {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.diagram-section {
+    flex: 0 0 350px;
+    min-width: 280px;
+}
+
+.diagram-frame {
+    position: relative;
+    background: white;
+    padding: 20px;
+    border: 2px dashed #667eea;
+    box-shadow: 3px 3px 0 rgba(102, 126, 234, 0.2);
+}
+
+.corner-decoration {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #764ba2;
+}
+
+.tl {
+    top: -2px;
+    left: -2px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.tr {
+    top: -2px;
+    right: -2px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.bl {
+    bottom: -2px;
+    left: -2px;
+    border-right: none;
+    border-top: none;
+}
+
+.br {
+    bottom: -2px;
+    right: -2px;
+    border-left: none;
+    border-top: none;
+}
+
+.diagram-photo {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    position: relative;
+    background: #f5f5f5;
+}
+
+.diagram-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(20%);
+}
+
+.diagram-arrows {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.diagram-label {
+    position: absolute;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.2rem;
+    color: #2d3748;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #667eea;
+}
+
+.label-1 {
+    top: 30px;
+    left: -10px;
+    transform: rotate(-5deg);
+}
+
+.label-2 {
+    top: 30px;
+    right: -10px;
+    transform: rotate(5deg);
+}
+
+.info-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.handwritten-text {
+    margin-bottom: 40px;
+}
+
+.intro-paragraph {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.4rem;
+    color: #2d3748;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.section-heading {
+    font-family: 'Caveat', cursive;
+    font-size: 2.2rem;
+    color: #667eea;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0.8);
+}
+
+.fun-facts {
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(102, 126, 234, 0.05);
+    border-left: 4px solid #667eea;
+    border-radius: 4px;
+}
+
+.facts-list {
+    list-style: none;
+    padding: 0;
+}
+
+.facts-list li {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.3rem;
+    color: #2d3748;
+    margin-bottom: 12px;
+    padding-left: 10px;
+}
+
+.skills-section {
+    margin-top: 40px;
+}
+
+.skills-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.skill-name {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.3rem;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.skill-bar-container {
+    height: 12px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.skill-bar {
+    height: 100%;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    border-radius: 10px;
+    position: relative;
+}
+
+.skill-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient( to bottom, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.decorative-doodle {
+    margin-top: 40px;
+    opacity: 0.6;
+}
+
+@media (max-width: 968px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .diagram-section {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 400px;
+    }
+    .info-section {
+        width: 100%;
+    }
+    .page-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+    .diagram-section {
+        flex: 0 0 auto;
+        min-width: 240px;
+    }
+    .intro-paragraph {
+        font-size: 1.2rem;
+    }
+    .section-heading {
+        font-size: 1.8rem;
+    }
+    .facts-list li {
+        font-size: 1.1rem;
+    }
+    .skill-name {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* ============================================
+   RESPONSIVE CSS FOR About.css
+   ============================================ */
+
+
+/* Large tablets and small desktops (968px) */
+
+@media (max-width: 968px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    .diagram-section {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 400px;
+    }
+    .info-section {
+        width: 100%;
+    }
+    .page-title {
+        font-size: 3rem;
+    }
+    .intro-paragraph {
+        text-align: left;
+    }
+}
+
+
+/* Tablets (768px) */
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.8rem;
+    }
+    .title-underline {
+        height: 6px;
+    }
+    .diagram-section {
+        max-width: 350px;
+    }
+    .diagram-label {
+        font-size: 1.1rem;
+        padding: 4px 8px;
+    }
+    .intro-paragraph {
+        font-size: 1.3rem;
+    }
+    .section-heading {
+        font-size: 2rem;
+    }
+    .facts-list li {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    .skill-name {
+        font-size: 1.2rem;
+    }
+    .skill-bar-container {
+        height: 10px;
+    }
+}
+
+
+/* Mobile phones (480px) */
+
+@media (max-width: 480px) {
+    .about-container {
+        padding: 10px 0;
+    }
+    .page-title {
+        font-size: 2.5rem;
+    }
+    .title-underline {
+        height: 5px;
+    }
+    .diagram-section {
+        flex: 0 0 auto;
+        min-width: 240px;
+        max-width: 300px;
+    }
+    .diagram-frame {
+        padding: 15px;
+    }
+    .corner-decoration {
+        width: 12px;
+        height: 12px;
+    }
+    .intro-paragraph {
+        font-size: 1.2rem;
+    }
+    .section-heading {
+        font-size: 1.8rem;
+    }
+    .fun-facts {
+        padding: 15px;
+        margin: 20px 0;
+    }
+    .facts-list li {
+        font-size: 1.1rem;
+    }
+    .skill-name {
+        font-size: 1.1rem;
+    }
+    .skills-grid {
+        gap: 15px;
+    }
+    .decorative-doodle {
+        margin-top: 30px;
+    }
+    .decorative-doodle svg {
+        width: 100px;
+    }
+}
+
+
+/* Very small phones (360px) */
+
+@media (max-width: 360px) {
+    .page-title {
+        font-size: 2.2rem;
+    }
+    .diagram-section {
+        max-width: 260px;
+    }
+    .intro-paragraph {
+        font-size: 1.1rem;
+    }
+    .section-heading {
+        font-size: 1.6rem;
+    }
+}

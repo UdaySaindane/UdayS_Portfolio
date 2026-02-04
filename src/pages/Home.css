@@ -1,0 +1,378 @@
+.home-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    min-height: 60vh;
+    flex-wrap: wrap;
+}
+
+.content-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.name-title {
+    font-family: 'Caveat', cursive;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.highlight-name {
+    color: #667eea;
+    position: relative;
+    display: inline-block;
+}
+
+.highlight-name::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: rgba(102, 126, 234, 0.2);
+    z-index: -1;
+    transform: skew(-12deg);
+}
+
+.role-container {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 2rem;
+    color: #4a5568;
+    margin-bottom: 30px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.role-prefix {
+    margin-right: 10px;
+}
+
+.role-text {
+    color: #764ba2;
+    font-weight: 600;
+    display: inline-block;
+    border-bottom: 3px solid #764ba2;
+    padding-bottom: 2px;
+}
+
+.intro-text {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.3rem;
+    color: #2d3748;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.doodles {
+    margin-top: 20px;
+    opacity: 0.6;
+}
+
+.photo-section {
+    flex: 0 0 40%;
+    min-width: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.photo-container {
+    position: relative;
+    background: white;
+    padding: 15px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
+}
+
+.photo-container:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.photo-tape {
+    position: absolute;
+    width: 60px;
+    height: 25px;
+    background: rgba(255, 248, 220, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.tape-top-left {
+    top: -10px;
+    left: 20px;
+    transform: rotate(-25deg);
+}
+
+.tape-top-right {
+    top: -10px;
+    right: 20px;
+    transform: rotate(25deg);
+}
+
+.tape-bottom-left {
+    bottom: -10px;
+    left: 20px;
+    transform: rotate(15deg);
+}
+
+.tape-bottom-right {
+    bottom: -10px;
+    right: 20px;
+    transform: rotate(-15deg);
+}
+
+.photo-placeholder {
+    width: 100%;
+    max-width: 350px;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-caption {
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    color: #667eea;
+    margin-top: 15px;
+    transform: rotate(-3deg);
+}
+
+.decorative-stars {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    display: flex;
+    gap: 5px;
+}
+
+.star {
+    color: #ffd700;
+    font-size: 1.5rem;
+    animation: twinkle 1.5s ease-in-out infinite;
+}
+
+.star:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.star:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes twinkle {
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 968px) {
+    .home-container {
+        flex-direction: column-reverse;
+    }
+    .photo-section {
+        flex: 0 0 auto;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .content-section {
+        text-align: center;
+    }
+    .name-title {
+        font-size: 2.8rem;
+    }
+    .role-container {
+        justify-content: center;
+        font-size: 1.6rem;
+    }
+    .intro-text {
+        max-width: 100%;
+    }
+    .doodles {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .name-title {
+        font-size: 2.2rem;
+    }
+    .role-container {
+        font-size: 1.4rem;
+    }
+    .intro-text {
+        font-size: 1.1rem;
+    }
+    .photo-placeholder {
+        max-width: 280px;
+    }
+}
+
+
+/* ============================================
+   RESPONSIVE CSS FOR Home.css
+   ============================================ */
+
+
+/* Large tablets and small desktops (968px) */
+
+@media (max-width: 968px) {
+    .home-container {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+    .photo-section {
+        flex: 0 0 auto;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .content-section {
+        text-align: center;
+        width: 100%;
+    }
+    .name-title {
+        font-size: 2.8rem;
+    }
+    .role-container {
+        justify-content: center;
+        font-size: 1.6rem;
+    }
+    .intro-text {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .doodles {
+        display: flex;
+        justify-content: center;
+    }
+    .photo-placeholder {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}
+
+
+/* Tablets (768px) */
+
+@media (max-width: 768px) {
+    .name-title {
+        font-size: 2.5rem;
+    }
+    .highlight-name::after {
+        height: 10px;
+        bottom: 3px;
+    }
+    .role-container {
+        font-size: 1.5rem;
+        min-height: 50px;
+    }
+    .intro-text {
+        font-size: 1.2rem;
+        padding: 0 20px;
+    }
+    .photo-placeholder {
+        max-width: 300px;
+    }
+    .photo-caption {
+        font-size: 1.5rem;
+    }
+    .decorative-stars {
+        top: -15px;
+        right: -15px;
+    }
+    .star {
+        font-size: 1.3rem;
+    }
+}
+
+
+/* Mobile phones (480px) */
+
+@media (max-width: 480px) {
+    .home-container {
+        gap: 20px;
+    }
+    .name-title {
+        font-size: 2.2rem;
+    }
+    .highlight-name::after {
+        height: 8px;
+        bottom: 2px;
+    }
+    .role-container {
+        font-size: 1.4rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    .role-prefix {
+        margin-right: 0;
+    }
+    .intro-text {
+        font-size: 1.1rem;
+        padding: 0 10px;
+    }
+    .photo-placeholder {
+        max-width: 280px;
+    }
+    .photo-container {
+        padding: 12px;
+    }
+    .photo-tape {
+        width: 50px;
+        height: 20px;
+    }
+    .photo-caption {
+        font-size: 1.3rem;
+        margin-top: 10px;
+    }
+    .decorative-stars {
+        top: -10px;
+        right: -10px;
+    }
+    .star {
+        font-size: 1.2rem;
+        gap: 3px;
+    }
+}
+
+
+/* Very small phones (360px) */
+
+@media (max-width: 360px) {
+    .name-title {
+        font-size: 2rem;
+    }
+    .role-container {
+        font-size: 1.3rem;
+    }
+    .intro-text {
+        font-size: 1rem;
+    }
+    .photo-placeholder {
+        max-width: 250px;
+    }
+}

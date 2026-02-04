@@ -1,0 +1,583 @@
+.projects-container {
+    padding: 20px 0;
+}
+
+.page-title {
+    font-family: 'Caveat', cursive;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.title-underline {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    transform: skew(-12deg);
+    opacity: 0.3;
+}
+
+.projects-intro {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #4a5568;
+    margin-bottom: 50px;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.project-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 30px;
+    background: white;
+    border: 3px solid #667eea;
+    border-radius: 12px;
+    box-shadow: 6px 6px 0 rgba(102, 126, 234, 0.2), 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+
+.project-card:hover {
+    box-shadow: 8px 8px 0 rgba(102, 126, 234, 0.3), 0 15px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+
+/* Alternating layout */
+
+.project-card.left-align {
+    flex-direction: row;
+    border-color: #667eea;
+}
+
+.project-card.right-align {
+    flex-direction: row-reverse;
+    border-color: #764ba2;
+}
+
+
+/* Decorative corners */
+
+.card-corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid;
+}
+
+.left-align .card-corner {
+    border-color: #667eea;
+}
+
+.right-align .card-corner {
+    border-color: #764ba2;
+}
+
+.tl {
+    top: -3px;
+    left: -3px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.tr {
+    top: -3px;
+    right: -3px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.bl {
+    bottom: -3px;
+    left: -3px;
+    border-right: none;
+    border-top: none;
+}
+
+.br {
+    bottom: -3px;
+    right: -3px;
+    border-left: none;
+    border-top: none;
+}
+
+
+/* Project number badge */
+
+.project-badge {
+    position: absolute;
+    top: -15px;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);
+    border: 3px solid #fffef0;
+    z-index: 10;
+}
+
+.left-align .project-badge {
+    left: 30px;
+}
+
+.right-align .project-badge {
+    right: 30px;
+}
+
+.badge-number {
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+}
+
+
+/* Project image section */
+
+.project-image-wrapper {
+    position: relative;
+    flex: 0 0 350px;
+    width: 350px;
+    height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 3px dashed #667eea;
+    background: #f5f5f5;
+}
+
+.right-align .project-image-wrapper {
+    border-color: #764ba2;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.08);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(102, 126, 234, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.right-align .image-overlay {
+    background: rgba(118, 75, 162, 0.9);
+}
+
+.project-card:hover .image-overlay {
+    opacity: 1;
+}
+
+.view-button {
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border: 3px solid white;
+    border-radius: 25px;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.view-button:hover {
+    background: white;
+    color: #667eea;
+}
+
+.right-align .view-button:hover {
+    color: #764ba2;
+}
+
+
+/* Project info section */
+
+.project-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.project-title {
+    font-family: 'Caveat', cursive;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.project-desc {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.project-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-badge {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: rgba(102, 126, 234, 0.15);
+    color: #667eea;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 2px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.right-align .tech-badge {
+    background: rgba(118, 75, 162, 0.15);
+    color: #764ba2;
+    border-color: #764ba2;
+}
+
+.tech-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2);
+}
+
+
+/* Card doodle */
+
+.card-doodle {
+    position: absolute;
+    bottom: 15px;
+    opacity: 0.4;
+}
+
+.left-align .card-doodle {
+    right: 20px;
+}
+
+.right-align .card-doodle {
+    left: 20px;
+}
+
+.decorative-elements {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    opacity: 0.7;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 1024px) {
+    .project-card {
+        flex-direction: column !important;
+        gap: 25px;
+        padding: 25px;
+    }
+    .project-image-wrapper {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 400px;
+        height: 400px;
+    }
+    .project-badge {
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%);
+    }
+    .card-doodle {
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.8rem;
+    }
+    .projects-intro {
+        font-size: 1.3rem;
+    }
+    .project-card {
+        gap: 20px;
+        padding: 20px;
+    }
+    .project-image-wrapper {
+        height: 320px;
+    }
+    .project-title {
+        font-size: 2rem;
+    }
+    .project-desc {
+        font-size: 1.2rem;
+    }
+    .tech-badge {
+        font-size: 1.1rem;
+        padding: 5px 12px;
+    }
+    .badge-number {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 2.3rem;
+    }
+    .projects-intro {
+        font-size: 1.2rem;
+    }
+    .project-card {
+        padding: 15px;
+    }
+    .project-image-wrapper {
+        height: 280px;
+    }
+    .project-title {
+        font-size: 1.8rem;
+    }
+    .project-desc {
+        font-size: 1.1rem;
+    }
+    .tech-badge {
+        font-size: 1rem;
+        padding: 4px 10px;
+    }
+    .view-button {
+        font-size: 1.5rem;
+        padding: 10px 24px;
+    }
+    .project-badge {
+        width: 40px;
+        height: 40px;
+    }
+    .badge-number {
+        font-size: 1.4rem;
+    }
+}
+
+
+/* ============================================
+   RESPONSIVE CSS FOR Projects.css
+   ============================================ */
+
+
+/* Large tablets and small desktops (1024px) */
+
+@media (max-width: 1024px) {
+    .project-card {
+        flex-direction: column !important;
+        gap: 25px;
+        padding: 25px;
+        align-items: center;
+    }
+    .project-image-wrapper {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 400px;
+        height: 400px;
+    }
+    .project-info {
+        text-align: center;
+    }
+    .project-tech-tags {
+        justify-content: center;
+    }
+    .project-badge {
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%);
+    }
+    .card-doodle {
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%);
+    }
+}
+
+
+/* Tablets (768px) */
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.8rem;
+    }
+    .title-underline {
+        height: 6px;
+    }
+    .projects-intro {
+        font-size: 1.3rem;
+        margin-bottom: 40px;
+    }
+    .projects-grid {
+        gap: 50px;
+    }
+    .project-card {
+        gap: 20px;
+        padding: 20px;
+    }
+    .project-image-wrapper {
+        height: 320px;
+        max-width: 350px;
+    }
+    .project-title {
+        font-size: 2rem;
+    }
+    .project-desc {
+        font-size: 1.2rem;
+    }
+    .tech-badge {
+        font-size: 1.1rem;
+        padding: 5px 12px;
+    }
+    .badge-number {
+        font-size: 1.5rem;
+    }
+    .project-badge {
+        width: 42px;
+        height: 42px;
+    }
+    .view-button {
+        font-size: 1.6rem;
+        padding: 10px 25px;
+    }
+    .decorative-elements svg {
+        width: 130px;
+        height: 70px;
+    }
+}
+
+
+/* Mobile phones (480px) */
+
+@media (max-width: 480px) {
+    .projects-container {
+        padding: 10px 0;
+    }
+    .page-title {
+        font-size: 2.3rem;
+    }
+    .title-underline {
+        height: 5px;
+    }
+    .projects-intro {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+    .projects-grid {
+        gap: 40px;
+    }
+    .project-card {
+        padding: 15px;
+        gap: 15px;
+    }
+    .project-image-wrapper {
+        height: 280px;
+        max-width: 300px;
+    }
+    .project-title {
+        font-size: 1.8rem;
+    }
+    .project-desc {
+        font-size: 1.1rem;
+    }
+    .tech-badge {
+        font-size: 1rem;
+        padding: 4px 10px;
+    }
+    .view-button {
+        font-size: 1.5rem;
+        padding: 10px 24px;
+    }
+    .project-badge {
+        width: 40px;
+        height: 40px;
+    }
+    .badge-number {
+        font-size: 1.4rem;
+    }
+    .card-corner {
+        width: 15px;
+        height: 15px;
+    }
+    .card-doodle {
+        width: 50px;
+        height: 25px;
+    }
+    .decorative-elements {
+        margin-top: 40px;
+    }
+    .decorative-elements svg {
+        width: 120px;
+        height: 60px;
+    }
+}
+
+
+/* Very small phones (360px) */
+
+@media (max-width: 360px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    .projects-intro {
+        font-size: 1.1rem;
+    }
+    .project-card {
+        padding: 12px;
+    }
+    .project-image-wrapper {
+        height: 260px;
+        max-width: 280px;
+    }
+    .project-title {
+        font-size: 1.6rem;
+    }
+    .project-desc {
+        font-size: 1rem;
+    }
+    .tech-badge {
+        font-size: 0.95rem;
+        padding: 3px 8px;
+    }
+}
