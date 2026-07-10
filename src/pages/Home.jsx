@@ -4,7 +4,7 @@ import './Home.css';
 import mee from '../assets/mee.jpeg';
 const Home = () => {
   const [currentRole, setCurrentRole] = useState(0);
-  const roles = ['Web Developer', 'Computer Engineer', 'Problem Solver', 'Creative Coder'];
+  const roles = ['Full Stack Developer', 'Computer Engineer', 'Problem Solver', 'Coder'];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -51,7 +51,7 @@ const Home = () => {
           transition={{ delay: 0.6, duration: 0.8 }}
         >
           Welcome to my Portfolio website! I build websites 
-          that bring ideas to life. Let's create something amazing together!
+          that bring ideas to life. 
         </motion.p>
 
         <motion.div 

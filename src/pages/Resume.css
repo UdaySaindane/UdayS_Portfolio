@@ -1,0 +1,138 @@
+.resume-container {
+    padding: 20px 0;
+}
+
+
+/* header */
+
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.resume-header h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 3rem;
+    color: #667eea;
+}
+
+.resume-header p {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.4rem;
+}
+
+.download-btn {
+    text-decoration: none;
+    background: #ffcc80;
+    color: #2d3748;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.3rem;
+    padding: 12px 25px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 0 #2d3748;
+    transition: .3s;
+}
+
+.download-btn:hover {
+    transform: translate(-3px, -3px);
+}
+
+.resume-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.resume-card {
+    background: white;
+    padding: 25px;
+    border: 2px dashed #667eea;
+    border-radius: 12px;
+    box-shadow: 5px 5px 0 rgba(102, 126, 234, .2);
+    position: relative;
+}
+
+.resume-card::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 40%;
+    width: 70px;
+    height: 25px;
+    background: rgba(255, 248, 200, .8);
+    transform: rotate(-5deg);
+}
+
+.resume-card h3 {
+    font-family: 'Caveat', cursive;
+    font-size: 2.2rem;
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.resume-card p,
+.resume-card li {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+.skill-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-cloud span {
+    background: #f5f3ff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.2rem;
+    border: 1px solid #667eea;
+}
+
+.project-note {
+    background: #fff8a6;
+    padding: 15px;
+    margin-bottom: 20px;
+    transform: rotate(-1deg);
+}
+
+.project-note h4 {
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+}
+
+
+/* responsive */
+
+@media(max-width:900px) {
+    .resume-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:480px) {
+    .resume-header h2 {
+        font-size: 2.3rem;
+    }
+    .download-btn {
+        width: 100%;
+        text-align: center;
+    }
+    .resume-card {
+        padding: 18px;
+    }
+    .resume-card h3 {
+        font-size: 1.8rem;
+    }
+    .resume-card p,
+    .resume-card li {
+        font-size: 1.1rem;
+    }
+}
