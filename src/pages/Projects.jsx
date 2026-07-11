@@ -13,7 +13,7 @@ const Projects = () => {
       name: 'ScholarNest : Scholarship and mentorship platform',
       description: 'Developed a full-featured scholarship platform enabling efficient searching and management of scholarships through a web-based interface with mentorship approach',
       tech: ['React', 'Node', 'Express','MySql'],
-      link: 'https://github.com/UdaySaindane/ScholarNest',
+      link: 'https://scholarnest-scholarships.netlify.app/',
       image: scholar
     },
 
