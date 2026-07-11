@@ -8,13 +8,7 @@ image: scholar
 
 const Projects = () => {
   const projects = [
-    {
-      name: 'ScholarStudy : E-Learning Platform',
-      description: 'Developed a comprehensive, role-based web application (LMS platform) using Python’s Django framework.',
-      tech: ['Django', 'Python', 'SQLite', 'Postgresql'],
-      link: 'https://scholarstudy.onrender.com/',
-      image: study
-    },
+  
         {
       name: 'ScholarNest : Scholarship and mentorship platform',
       description: 'Developed a full-featured scholarship platform enabling efficient searching and management of scholarships through a web-based interface with mentorship approach',
@@ -22,12 +16,20 @@ const Projects = () => {
       link: 'https://github.com/UdaySaindane/ScholarNest',
       image: scholar
     },
+
     {
       name: 'The Learner Tattooz and Arts',
       description: 'A modern portfolio website for a tattoo studio owner developed using React.js. The project focuses on reusable components, responsive design, and visual presentation. ',
       tech: ['React.js', 'CSS3'],
       link: 'https://the-learner-tattooz-and-arts.netlify.app/',
       image: learner
+    },
+          {
+      name: 'ScholarStudy : E-Learning Platform',
+      description: 'Developed a comprehensive, role-based web application (LMS platform) using Python’s Django framework.',
+      tech: ['Django', 'Python', 'SQLite', 'Postgresql'],
+      link: 'https://scholarstudy.onrender.com/',
+      image: study
     },
 
     // {
