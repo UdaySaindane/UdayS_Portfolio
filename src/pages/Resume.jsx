@@ -55,8 +55,8 @@ Full Stack Developer | Computer Engineer
 </div>
 
 
-{/* <a 
-href="/https://drive.google.com/file/d/1F6r2624898g1Yc4rIWgs6WoO7Qr-jXYo/view?usp=drive_link"
+<a 
+href="https://drive.google.com/file/d/1F6r2624898g1Yc4rIWgs6WoO7Qr-jXYo/view?usp=drive_link"
   target="_blank"
     rel="noopener noreferrer"
 
@@ -64,7 +64,7 @@ href="/https://drive.google.com/file/d/1F6r2624898g1Yc4rIWgs6WoO7Qr-jXYo/view?us
 className="download-btn"
 >
 View Resume 📄
-</a> */}
+</a>
 
 
 </div>
