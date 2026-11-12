@@ -1,16 +1,251 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ─────────────────────────────────────────────
+   Design tokens — dark theme (light theme later)
+   ───────────────────────────────────────────── */
+:root {
+  --bg: #0d0d0d;
+  --bg-elev: #161616;
+  --fg: #f1efe9;
+  --fg-muted: #9b988f;
+  --fg-subtle: #5f5d58;
+  --line: #242424;
+  --line-strong: #3a3a3a;
+  --accent: #ff4d2e;
+  --ok: #4ade80;
+
+  --font: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --max: 1440px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --col-gap: clamp(16px, 2vw, 24px);
+  --header-h: 60px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  color-scheme: dark;
+}
+
+/* ───────────── Reset / base ───────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
-    margin: 0;
-    font-family: 'Caveat', cursive;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+::selection {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ───────────── Layout helpers ───────────── */
+.container {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: clamp(80px, 11vw, 160px) 0;
+  scroll-margin-top: var(--header-h);
+}
+
+/* 12-column Swiss grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--col-gap);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--fg-muted);
+  letter-spacing: 0.01em;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 100;
+  padding: 10px 16px;
+  background: var(--fg);
+  color: var(--bg);
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+/* Underline that wipes out on hover */
+.link-u {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 1px;
+  transition: background-size 0.35s var(--ease);
+}
+
+.link-u:hover {
+  background-size: 0% 1px;
+  background-position: 100% 100%;
+}
+
+/* ───────────── Buttons ───────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 22px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  border: 1px solid transparent;
+  transition:
+    background-color 0.2s var(--ease),
+    color 0.2s var(--ease),
+    border-color 0.2s var(--ease);
+}
+
+.btn-solid {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.btn-solid:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-ghost {
+  border-color: var(--line-strong);
+}
+
+.btn-ghost:hover {
+  border-color: var(--fg);
+}
+
+/* ───────────── Section heading ───────────── */
+.section-head {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--col-gap);
+  row-gap: 20px;
+  align-items: end;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-strong);
+  margin-bottom: clamp(40px, 6vw, 88px);
+}
+
+.section-index {
+  grid-column: 1 / 4;
+  align-self: start;
+  font-size: 0.8125rem;
+  color: var(--fg-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.section-title {
+  grid-column: 4 / 10;
+  font-size: clamp(2.75rem, 8vw, 7.5rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 0.88;
+  margin-left: -0.04em;
+  transition: color 0.25s var(--ease);
+}
+
+/* Section titles turn accent on hover — same colour as the email link, no underline */
+.section-title:hover {
+  color: var(--accent);
+}
+
+.section-note {
+  grid-column: 10 / -1;
+  justify-self: end;
+  text-align: right;
+}
+
+@media (max-width: 1024px) {
+  .section-index {
+    grid-column: 1 / 7;
+  }
+
+  .section-note {
+    grid-column: 7 / -1;
+    align-self: start;
+    grid-row: 1;
+  }
+
+  .section-title {
+    grid-column: 1 / -1;
+  }
 }

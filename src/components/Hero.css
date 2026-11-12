@@ -1,0 +1,163 @@
+.hero {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: calc(var(--header-h) + 20px);
+  padding-bottom: clamp(24px, 4vw, 48px);
+}
+
+.hero-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: clamp(20px, 3vw, 36px);
+}
+
+/* Thin rule row with tiny labels (Swiss style) */
+.hero-meta {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--col-gap);
+  row-gap: 8px;
+  align-items: center;
+  padding-block: 12px;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+  font-size: 0.8125rem;
+  color: var(--fg-muted);
+}
+
+.hero-meta > p:first-child {
+  grid-column: 1 / 5;
+}
+
+.hero-meta strong {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+.hero-status {
+  grid-column: 5 / 9;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ok);
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.16);
+}
+
+.hero-links {
+  grid-column: 9 / -1;
+  justify-self: end;
+  display: flex;
+  gap: 20px;
+  color: var(--fg);
+}
+
+/* Giant name */
+.hero-name {
+  /* capped by viewport height too, so name + tagline fit on a laptop screen */
+  font-size: clamp(3.4rem, min(19vw, 24svh), 18rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.84;
+  margin-left: -0.05em;
+}
+
+.line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+.line {
+  display: block;
+}
+
+/* Horizontal bars, thin → thick */
+.hero-bars {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 0.8vw, 10px);
+}
+
+.bar {
+  display: block;
+  background: var(--fg);
+  transform-origin: left center;
+}
+
+.bar-1 { height: 1px; }
+.bar-2 { height: 4px; }
+.bar-3 { height: 10px; }
+.bar-4 { height: clamp(20px, min(3.5vw, 5svh), 44px); }
+
+.hero-foot {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--col-gap);
+  row-gap: 24px;
+  align-items: end;
+}
+
+.hero-tagline {
+  grid-column: 1 / 8;
+  max-width: 38ch;
+  font-size: clamp(1.125rem, 1.8vw, 1.625rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.hero-cta {
+  grid-column: 8 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* ───────────── Breakpoints ───────────── */
+@media (max-width: 1024px) {
+  /* On tall tablet/phone screens, start content at the top instead of leaving a gap */
+  .hero {
+    min-height: 0;
+    padding-top: calc(var(--header-h) + 32px);
+  }
+
+  .hero-inner {
+    justify-content: flex-start;
+  }
+
+  .hero-meta > p:first-child { grid-column: 1 / 7; }
+  .hero-status { grid-column: 7 / -1; justify-self: end; }
+  .hero-links { grid-column: 1 / -1; justify-self: start; }
+
+  .hero-tagline { grid-column: 1 / -1; }
+  .hero-cta { grid-column: 1 / -1; justify-content: flex-start; }
+}
+
+@media (max-width: 640px) {
+  .hero-meta > p:first-child,
+  .hero-status,
+  .hero-links {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .hero-name {
+    font-size: clamp(3rem, 21vw, 6rem);
+  }
+
+  .hero-cta .btn {
+    flex: 1 1 auto;
+  }
+}

@@ -1,0 +1,104 @@
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 56px var(--col-gap);
+}
+
+.skill-group-title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.skill-group-idx {
+  color: var(--accent);
+}
+
+.skill-count {
+  margin-left: auto;
+  color: var(--fg-subtle);
+  font-variant-numeric: tabular-nums;
+}
+
+.skill-item {
+  --brand: var(--fg);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-block: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.skill-item:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+/* Logo tile — tinted with the brand colour */
+.skill-logo {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  font-size: 20px;
+  color: var(--brand);
+  background: color-mix(in srgb, var(--brand) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--brand) 22%, transparent);
+  transition: transform 0.3s var(--ease);
+}
+
+.skill-logo-fallback {
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.skill-name {
+  font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  transition: transform 0.3s var(--ease);
+}
+
+@media (hover: hover) {
+  .skill-item:hover .skill-logo {
+    transform: scale(1.08);
+  }
+
+  .skill-item:hover .skill-name {
+    transform: translateX(4px);
+  }
+}
+
+.skills-core {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 24px;
+  margin-top: clamp(48px, 6vw, 72px);
+  padding-top: 16px;
+  border-top: 1px solid var(--line-strong);
+  font-size: clamp(1rem, 1.3vw, 1.125rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+
+  .skill-logo {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+  }
+}

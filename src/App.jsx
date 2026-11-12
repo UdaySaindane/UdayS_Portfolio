@@ -1,114 +1,34 @@
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Navbar from './components/Navbar';
-// import Home from './pages/Home';
-// import About from './pages/About';
-// import Projects from './pages/Projects';
-// import Contact from './pages/Contact';
+import { MotionConfig } from 'framer-motion';
 
-// import './App.css';
-
-// function App() {
-//   return (
-//     <Router>
-//       <div className="notebook-container">
-//         <div className="notebook-page">
-//           <div className="notebook-lines"></div>
-//           <div className="notebook-margin"></div>
-//           <div className="notebook-holes">
-//             <div className="hole"></div>
-//             <div className="hole"></div>
-//             <div className="hole"></div>
-//           </div>
-//           <Navbar />
-//           <div className="content-area">
-//             <Routes>
-//               <Route path="/" element={<Home />} />
-//               <Route path="/about" element={<About />} />
-//               <Route path="/projects" element={<Projects />} />
-//               <Route path="/contact" element={<Contact />} />
-//             </Routes>
-//           </div>
-//         </div>
-//       </div>
-//     </Router>
-//   );
-// }
-
-// export default App;/
-
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-import Navbar from './components/Navbar';
-
-import Home from './pages/Home';
-import About from './pages/About';
-import Projects from './pages/Projects';
-import Resume from './pages/Resume';
-import Contact from './pages/Contact';
-
-import './App.css';
-
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import Skills from './components/Skills';
+import Experience from './components/Experience';
+import Projects from './components/Projects';
+import Education from './components/Education';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <Router>
-
-      <div className="notebook-container">
-
-        <div className="notebook-page">
-
-          <div className="notebook-lines"></div>
-          <div className="notebook-margin"></div>
-
-          <div className="notebook-holes">
-            <div className="hole"></div>
-            <div className="hole"></div>
-            <div className="hole"></div>
-          </div>
-
-
-          <Navbar />
-
-
-          <div className="content-area">
-
-            <Routes>
-
-              <Route path="/" element={<Home />} />
-
-              <Route 
-              path="/about" 
-              element={<About />} 
-              />
-
-              <Route 
-              path="/projects" 
-              element={<Projects />} 
-              />
-
-
-              <Route 
-              path="/resume" 
-              element={<Resume />} 
-              />
-
-
-              <Route 
-              path="/contact" 
-              element={<Contact />} 
-              />
-
-
-            </Routes>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </Router>
+    // reducedMotion="user" turns animations off for visitors who ask their OS for less motion
+    <MotionConfig reducedMotion="user">
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
+      <Header />
+      <main id="main">
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Education />
+        <Contact />
+      </main>
+      <Footer />
+    </MotionConfig>
   );
 }
 
